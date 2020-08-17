@@ -9,6 +9,10 @@ class DroidsController < ApplicationController
   end
 
   def update
+    @droid = Droid.new(params_droid)
+    @droid.user = current_user
+    @droid.save
+    redirect_to droids_path
   end
 
   def new
