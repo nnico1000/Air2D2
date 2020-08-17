@@ -10,5 +10,4 @@ class DroidsController < ApplicationController
 
   def update
   end
-
 end
