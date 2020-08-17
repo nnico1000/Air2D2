@@ -1,6 +1,7 @@
 <%= link_to 'Home', root_path %>
 
-<%= form_for(@droid) do |f| %>
+<%= simple_form_for(@droid) do |f| %>
+
     <%= f.input :name %>
     <%= f.input :category %>
     <%= f.input :builder %>
