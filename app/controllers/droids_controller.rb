@@ -1,0 +1,2 @@
+class DroidsController < ApplicationController
+end
