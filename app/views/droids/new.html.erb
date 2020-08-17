@@ -1,0 +1,10 @@
+
+<%= form_for [ @user, @droid] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :category %>
+  <%= f.input :builder %>
+  <%= f.input :age %>
+  <%= f.input :description %>
+  <%= f.input :era %>
+  <%= f.submit "Submit review" %>
+<% end %>

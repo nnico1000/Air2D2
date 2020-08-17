@@ -1,0 +1,5 @@
+<%= simple_form_for([@user, @droid, @rent]) do |f| %>
+  <%= f.input :start_year %>
+  <%= f.input :end_year %>
+  <%= f.submit "Ask for rent", class: "btn btn-primary" %>
+<% end %>
