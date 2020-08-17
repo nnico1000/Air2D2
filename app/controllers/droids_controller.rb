@@ -47,6 +47,6 @@ class DroidsController < ApplicationController
   private
 
   def params_droid
-    params.require(:droid).permit(:name, :category, :builder, :age, :desciption, :era)
+    params.require(:droid).permit(:name, :category, :builder, :age, :desciption, :era, :price_per_year)
   end
 end
