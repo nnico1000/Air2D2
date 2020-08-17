@@ -1,3 +1,15 @@
+<h1>All droids</h1>
+
+<%= link_to "Create a new robot", new_droid_path %>
+
+<br>
+<br>
 <% @droids.each do |droid| %>
  <p> <%= droid.name %> </p>
+ <p> <%=droid.category %> </p>
+ <%= link_to "See details", droid_path(droid) %>
+ <br>
+ <br>
 <% end %>
+<br>
+<br>

@@ -1,20 +1,17 @@
 <h1><%= @droid.name %></h1>
 
-<% @droid.each do |droid| %>
-  <p><%= droid.category %></p>
-  <p><%= droid.builder %></p>
-  <p><%= droid.age %></p>
-  <p><%= droid.era %></p>
-  <p><%= droid.description %></p>
-<% end %>
+  <p><%= @droid.category %></p>
+  <p><%= @droid.builder %></p>
+  <p><%= @droid.age %></p>
+  <p><%= @droid.era %></p>
+  <p><%= @droid.description %></p>
 
-<%= link_to 'add droid', droid_path(@droid) %>
 
+<%= link_to "Update", edit_droid_path(@droid) %>
+<br>
 <%= link_to "Delete #{@droid.name}",
-            droid
-          _path(@droid
-            ),
+            droid_path(@droid),
             method: :delete,
             data: { confirm: "Are you sure?" } %>
-
-<%= link_to 'Back', droid_path %> |
+<br>
+<%= link_to 'Back', droids_path %>

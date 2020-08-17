@@ -3,4 +3,10 @@ class RentsController < ApplicationController
     @droid = Droid.find(params[:droid_id])
     @rent = Rent.new
   end
+
+  def create
+  end
+
+  def destroy
+  end
 end

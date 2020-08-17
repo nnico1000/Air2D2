@@ -10,7 +10,6 @@ Rent.destroy_all
 Droid.destroy_all
 User.destroy_all
 
-
 hans = User.create!(name: "Hans", email: "hans@gmail.com", password: "123456")
 hans_2 = User.create!(name: "Hans2", email: "hans2@gmail.com", password: "123456")
 
