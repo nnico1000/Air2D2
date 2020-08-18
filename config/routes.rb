@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   resources :droids do
-    resources :rents, only: [:show, :new, :create]
+    resources :rents, only: [:new, :create]
   end
-  resources :rents, only: [:destroy]
+  resources :rents, only: [:show, :destroy]
   resources :users
 end

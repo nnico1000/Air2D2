@@ -4,11 +4,11 @@
 <p><%= @rent.start_year %> /to/ <%= @rent.end_year %></p>
 
 <h4>The droid:</h4>
-<p><%= @droid.name %></p>
+<p><%= @rent.droid.name %></p>
 
 <h4>The one who rent the droid:</h4>
 <!-- this is a way to find who is the one that the droid belongs to -->
-<% @renter = User.find(id = @droid.user_id) %>
-<p><%= @renter.name %></p>
+<p><%= @rent.droid.user.name %></p>
 
-<h4>We should display the name of the man who pay and the name of the mane who rennt !!!</h4>
+<h4>The one who pay</h4>
+<p><%= @rent.user.name %></p>

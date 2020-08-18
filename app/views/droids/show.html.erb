@@ -11,7 +11,7 @@
 <br>
 <h3>It's not possible during:</h3>
 <% @droid.rents.each do |rent|%>
-<li><%= rent.start_year %> to <%= rent.end_year %> // <%= link_to "See more", droid_rent_path(@droid) %> // <%= link_to "Delete this rent", rent_path(rent), method: :delete, data: { confirm: "Are you sure?"} %> </li>
+<li><%= rent.start_year %> to <%= rent.end_year %> // <%= link_to "See more", rent_path(rent) %> // <%= link_to "Delete this rent", rent_path(rent), method: :delete, data: { confirm: "Are you sure?"} %> </li>
 <% end %>
 
 <br>
