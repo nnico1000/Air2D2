@@ -21,7 +21,11 @@
 <br>
 <%= link_to "Rent this droid", new_droid_rent_path(@droid) %>
 <br>
-<%= link_to "Update", edit_droid_path(@droid) %>
+<% @droids.each do |droid| %>
+  <% if policy(droid).edit? %>
+    <%= link_to "Update", edit_droid_path(@droid) %>
+  <% end %>
+<% end %>
 <br>
 <%= link_to "Delete #{@droid.name}",
             droid_path(@droid),
