@@ -6,15 +6,15 @@ class DroidsController < ApplicationController
   end
 
   def show
-    # @droid = Droid.find(params[:id])
+    @droid = Droid.find(params[:id])
   end
 
   def edit
-    # @droid = Droid.find(params[:id])
+    @droid = Droid.find(params[:id])
   end
 
   def update
-    # @droid = Droid.find(params[:id])
+    @droid = Droid.find(params[:id])
     @droid.update(params_droid)
     @droid.user = current_user
     @droid.save
