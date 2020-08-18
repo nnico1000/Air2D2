@@ -1,7 +1,7 @@
-<%= link_to 'Home', root_path %>
+<%= link_to 'Back', root_path %>
 
+<div id="new-form">
 <%= simple_form_for(@droid) do |f| %>
-
     <%= f.input :name %>
     <%= f.input :category %>
     <%= f.input :builder %>
@@ -9,6 +9,7 @@
     <%= f.input :description %>
     <%= f.input :era %>
     <%= f.input :photo, as: :file %>
-    <%= f.submit %>
+    <%= f.submit "Modifier le droid", class: 'btn'%>
   <% end %>
-<h1>hello</h1>
+</div>
+
