@@ -1,0 +1,19 @@
+.form-group {
+  margin-bottom: 0px;
+}
+
+.form_control::placeholder{
+  font-color: black;
+  border: 5px solid red;
+}
+
+.search-bar {
+  margin: 0px 15%;
+  border-radius: 4px;
+}
+
+.form-control {
+  &::placeholder {
+    color: black;
+  }
+}

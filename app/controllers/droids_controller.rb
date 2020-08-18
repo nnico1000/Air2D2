@@ -3,6 +3,14 @@ class DroidsController < ApplicationController
   before_action :set_droid, only: [:show, :edit, :update, :destroy]
 
   def index
+    # if params["search"]
+    #   @era = params["search"]["era"]
+    #   @category = params["search"]["category"]
+    #   @builder = params["search"]["builder"]
+    #   @droids.each do |droid|
+    #     if droid.ear ==
+    #   end
+    # end
     @droids = policy_scope(Droid)
     authorize @droids
   end

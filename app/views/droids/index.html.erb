@@ -1,19 +1,30 @@
-<h1>All droids</h1>
 
-<%= link_to "sign out", destroy_user_session_path, method: :delete %>
-
-<% if policy(Droid).create? %>
-  <%= link_to "Create a new robot", new_droid_path %>
+<%= simple_form_for :search, url: droids_path, method: "GET" do |f| %>
+  <div class="search-bar d-flex flex-direction-row p-3 bg-dark justify-content-center align-items-center">
+    <div class="search-box px-2">
+      <%= f.input :era, prompt: "ERA", label: false, collection: Droid::ERA %>
+    </div>
+    <div class="search-box px-2">
+      <%= f.input :category, prompt: "CATEGORY", label: false, collection: Droid::CATEGORY %>
+    </div>
+    <div class="search-box px-2">
+      <%= f.input :builder, prompt: "BUILDER", label: false, collection: Droid::BUILDER %>
+    </div>
+    <div class="search-box px-2">
+      <%= f.submit %>
+    </div>
+  </div>
 <% end %>
 
-<br>
-<br>
-<% @droids.each do |droid| %>
- <p> <%= droid.name %> </p>
- <p> <%=droid.category %> </p>
- <%= link_to "See details", droid_path(droid) %>
- <br>
- <br>
-<% end %>
-<br>
-<br>
+  <% if policy(Droid).create? %>
+    <%= link_to "Create a new robot", new_droid_path %>
+  <% end %>
+
+  <% @droids.each do |droid| %>
+   <p> <%= droid.name %> </p>
+   <p> <%=droid.category %> </p>
+   <%= link_to "See details", droid_path(droid) %>
+  <% end %>
+
+  <%= link_to "sign out", destroy_user_session_path, method: :delete %>
+</div>
