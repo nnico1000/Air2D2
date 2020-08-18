@@ -1,6 +1,6 @@
 class RentsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_droid, only: [:show, :new, :create]
+  before_action :set_droid, only: [:new, :create]
 
   def show
     @rent = Rent.find(params[:id])
