@@ -1,32 +1,50 @@
-<h1><%= @droid.name %></h1>
+<div class="card-droid">
+  <div class="img-card">
+    <img src="https://static.fnac-static.com/multimedia/Images/FR/MDM/b5/83/4d/5079989/1505-1/tsp20180719214943/Droid-Sphero-R2-Q5-Noir-et-orange.jpg" />
+  </div>
 
-  <p><%= @droid.category %></p>
-  <p><%= @droid.builder %></p>
-  <p><%= @droid.age %></p>
-  <p><%= @droid.era %></p>
-  <p><%= @droid.description %></p>
+  <div class="card-droid-infos">
+    <div class="droid-info">
+      <div class="title-description">
+        <h1><%= @droid.name %></h1>
+        <p><%= @droid.description %></p>
+      </div>
+      <div class="lien">
+        <ul>
+          <li><i class="fas fa-user-astronaut"></i> <%= @droid.category %></li>
+          <li><i class="fas fa-tools"></i>  <%= @droid.builder %></li>
+          <li><i class="fas fa-cogs"></i>  <%= @droid.age %></li>
+          <li><i class="fas fa-history"></i>  <%= @droid.era %></li>
+        </ul>
 
-<br>
-<br>
-<br>
-<h3>It's not possible during:</h3>
-<% @droid.rents.each do |rent|%>
-<li><%= rent.start_year %> to <%= rent.end_year %> // <%= link_to "See more", rent_path(rent) %> // <%= link_to "Delete this rent", rent_path(rent), method: :delete, data: { confirm: "Are you sure?"} %> </li>
-<% end %>
+        <div class="owner">
+          <img src="https://starwarsblog.starwars.com/wp-content/uploads/2013/08/Onaconda_Farr-1088x816-420160302007.jpg" alt="">
+          <h2>Location à <%= @droid.user.name %></h2>
+        </div>
+      </div>
+    </div>
 
-<br>
-<br>
-<br>
+    <div class="chose-date">
+      <div class="js">
+      </div>
+      <div class="price">
+      </div>
+      <div class="btn-book-date">
+        <ul>
+          <li><%= link_to "Rent this droid", new_droid_rent_path(@droid) %></li>
+        <% @droid.rents.each do |rent|%>
+          <li><%= rent.start_year %> to <%= rent.end_year %> // <%= link_to "See more", rent_path(rent) %> // <%= link_to "Delete this rent", rent_path(rent), method: :delete, data: { confirm: "Are you sure?"} %> </li>
+        <% end %>
+          <li><%= link_to "Update", edit_droid_path(@droid) %></li>
+          <li><%= link_to "Delete #{@droid.name}",
+                      droid_path(@droid),
+                      method: :delete,
+                      data: { confirm: "Are you sure?" } %></li>
+          <li><%= link_to 'Back', droids_path %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 
-<br>
-<%= link_to "Rent this droid", new_droid_rent_path(@droid) %>
-<br>
-    <%= link_to "Update", edit_droid_path(@droid) %>
-<br>
-<%= link_to "Delete #{@droid.name}",
-            droid_path(@droid),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %>
-<br>
-<%= link_to 'Back', droids_path %>
 
