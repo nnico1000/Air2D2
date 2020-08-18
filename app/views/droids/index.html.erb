@@ -1,5 +1,7 @@
 <h1>All droids</h1>
 
+<%= link_to "sign out", destroy_user_session_path, method: :delete %>
+
 <% if policy(Droid).create? %>
   <%= link_to "Create a new robot", new_droid_path %>
 <% end %>
