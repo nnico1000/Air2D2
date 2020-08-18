@@ -17,20 +17,18 @@
   </div>
 <% end %>
 
-  <% if policy(Droid).create? %>
-    <%= link_to "Create a new robot", new_droid_path %>
-  <% end %>
+<% if policy(Droid).create? %>
+  <%= link_to "Create a new robot", new_droid_path %>
+<% end %>
 
-  <% @droids.each do |droid| %>
-   <p> <%= droid.name %> </p>
-   <p> <%=droid.category %> </p>
-   <%= link_to "See details", droid_path(droid) %>
-  <% end %>
+<% @droids.each do |droid| %>
+ <p> <%= droid.name %> </p>
+ <p> <%=droid.category %> </p>
+ <%= link_to "See details", droid_path(droid) %>
+<% end %>
 
-  <%= link_to "sign out", destroy_user_session_path, method: :delete %>
+<%= link_to "sign out", destroy_user_session_path, method: :delete %>
 
-<br>
-<br>
 <% @droids.each do |droid| %>
   <% if droid.photo.attached? %>
     <%= cl_image_tag droid.photo.key, height: 300, width: 400, crop: :fill %>
@@ -38,8 +36,4 @@
  <p> <%= droid.name %> </p>
  <p> <%=droid.category %> </p>
  <%= link_to "See details", droid_path(droid) %>
- <br>
- <br>
 <% end %>
-<br>
-<br>
