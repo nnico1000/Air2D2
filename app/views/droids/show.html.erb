@@ -1,6 +1,6 @@
 <div class="card-droid">
   <div class="img-card">
-    <%= cl_image_tag @droid.photo.key, height: 300, width: 400, crop: :fill %>
+    <%= cl_image_tag @droid.photo.key %>
   </div>
 
   <div class="card-droid-infos">
@@ -16,7 +16,7 @@
           <li><i class="fas fa-cogs"></i>  <%= @droid.age %></li>
           <li><i class="fas fa-history"></i>  <%= @droid.era %></li>
         </ul>
-        
+
         <p><%= @droid.category %></p>
         <p><%= @droid.builder %></p>
         <p><%= @droid.age %></p>
