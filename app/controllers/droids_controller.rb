@@ -4,6 +4,7 @@ class DroidsController < ApplicationController
 
   def index
     @droids = policy_scope(Droid)
+    authorize @droids
   end
 
   def show

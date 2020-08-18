@@ -6,8 +6,12 @@ class DroidPolicy < ApplicationPolicy
     end
   end
 
+  def index?
+    true
+  end
+
   def show?
-    true  # Anyone can view a restaurant
+    true # Anyone can view a restaurant
   end
 
   def create?
