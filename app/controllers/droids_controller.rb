@@ -2,19 +2,19 @@ class DroidsController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update, :new, :create]
 
   def index
-  @droids = Droid.all
+    @droids = policy_scope(Droid)
   end
 
   def show
-    @droid = Droid.find(params[:id])
+    # @droid = Droid.find(params[:id])
   end
 
   def edit
-    @droid = Droid.find(params[:id])
+    # @droid = Droid.find(params[:id])
   end
 
   def update
-    @droid = Droid.find(params[:id])
+    # @droid = Droid.find(params[:id])
     @droid.update(params_droid)
     @droid.user = current_user
     @droid.save
@@ -25,6 +25,8 @@ class DroidsController < ApplicationController
   def new
     @user = current_user
     @droid = Droid.new
+
+    authorize @droid
   end
 
   def create
@@ -32,9 +34,12 @@ class DroidsController < ApplicationController
     @user = current_user
 
     @droid.user = @user
-    @droid.save
 
-    redirect_to droids_path
+    if @droid.save
+      redirect_to droids_path
+    end
+
+    authorize @droid
   end
 
   def destroy
@@ -48,5 +53,11 @@ class DroidsController < ApplicationController
 
   def params_droid
     params.require(:droid).permit(:name, :category, :builder, :age, :desciption, :era, :price_per_year)
+  end
+
+  def set_droid
+    @droid = Droid.find(params[:id])
+
+    authorize @droid
   end
 end
