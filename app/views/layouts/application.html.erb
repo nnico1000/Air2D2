@@ -12,10 +12,11 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
-  <body>
-<%= render "shared/navbar" %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+
+  <body style="background-image: url('https://lescroisesdelaforce.fr/wp-content/uploads/2018/08/146610-large-star-wars-star-background-1920x1080.jpg')">
+    <%= render "shared/navbar" %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>
