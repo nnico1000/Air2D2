@@ -8,6 +8,7 @@ class RentsController < ApplicationController
 
   def new
     @rent = Rent.new
+    @rent = 12
   end
 
   def create
