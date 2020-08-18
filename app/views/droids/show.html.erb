@@ -1,6 +1,6 @@
 <div class="card-droid">
   <div class="img-card">
-    <img src="https://static.fnac-static.com/multimedia/Images/FR/MDM/b5/83/4d/5079989/1505-1/tsp20180719214943/Droid-Sphero-R2-Q5-Noir-et-orange.jpg" />
+    <%= cl_image_tag @droid.photo.key, height: 300, width: 400, crop: :fill %>
   </div>
 
   <div class="card-droid-infos">
@@ -16,6 +16,12 @@
           <li><i class="fas fa-cogs"></i>  <%= @droid.age %></li>
           <li><i class="fas fa-history"></i>  <%= @droid.era %></li>
         </ul>
+        
+        <p><%= @droid.category %></p>
+        <p><%= @droid.builder %></p>
+        <p><%= @droid.age %></p>
+        <p><%= @droid.era %></p>
+        <p><%= @droid.description %></p>
 
         <div class="owner">
           <img src="https://starwarsblog.starwars.com/wp-content/uploads/2013/08/Onaconda_Farr-1088x816-420160302007.jpg" alt="">

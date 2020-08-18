@@ -1,0 +1,19 @@
+.btn {
+  color: black;
+  background-color: $button;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  padding: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.btn:hover {
+  color: $button;
+  background-color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+}
+
