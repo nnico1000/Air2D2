@@ -4,14 +4,17 @@ class RentsController < ApplicationController
 
   def show
     @rent = Rent.find(params[:id])
+    authorize @rent
   end
 
   def new
     @rent = Rent.new
+    authorize @rent
   end
 
   def create
     @rent = Rent.new(rent_params)
+    authorize @rent
     @rent.droid = @droid
     @rent.user = current_user
     @rent.save
@@ -20,6 +23,7 @@ class RentsController < ApplicationController
 
   def destroy
     @rent = Rent.find(params[:id])
+    authorize @rent
     @rent.destroy
 
     redirect_to droid_path(@rent.droid_id)
