@@ -1,11 +1,43 @@
 h2 {
-  color: #fee134,
+  color: $button;
+  font-weight: bold;
+  font-size: 50px;
+  margin-bottom: 50px;
 }
 
 .email {
-  color: #fee134,
+  color: $button
 }
 
 .password {
-  color: #fee134,
+  color: $button
+}
+
+.form-check-label {
+ color: $button
+}
+
+.sign-up {
+ color: $button
+}
+
+.form-login {
+  width: 50%;
+  margin-bottom: 80px;
+}
+
+.form-control {
+  width: 100%;
+}
+
+.container-login {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-inputs {
+  margin-bottom: 20px;
 }
