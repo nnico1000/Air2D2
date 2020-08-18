@@ -1,5 +1,6 @@
 <h1><%= @droid.name %></h1>
 
+  <%= cl_image_tag @droid.photo.key, height: 300, width: 400, crop: :fill %>
   <p><%= @droid.category %></p>
   <p><%= @droid.builder %></p>
   <p><%= @droid.age %></p>
