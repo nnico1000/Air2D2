@@ -1,6 +1,8 @@
 <h1>All droids</h1>
 
-<%= link_to "Create a new robot", new_droid_path %>
+<% if policy(Droid).create? %>
+  <%= link_to "Create a new robot", new_droid_path %>
+<% end %>
 
 <br>
 <br>
