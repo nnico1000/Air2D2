@@ -1,0 +1,18 @@
+.container-signup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.file {
+  color: $button;
+}
+
+.form-signup {
+  margin-bottom: 40px;
+}
+
+.user-label {
+  color: $button;
+}
