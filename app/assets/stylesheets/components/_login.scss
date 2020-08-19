@@ -5,13 +5,6 @@ h2 {
   margin-bottom: 50px;
 }
 
-.email {
-  color: $button
-}
-
-.password {
-  color: $button
-}
 
 .form-check-label {
  color: $button
@@ -26,8 +19,8 @@ h2 {
   margin-bottom: 80px;
 }
 
-.form-control {
-  width: 100%;
+.form-group {
+  width: 100% !important;
 }
 
 .container-login {
@@ -41,3 +34,4 @@ h2 {
 .form-inputs {
   margin-bottom: 20px;
 }
+
