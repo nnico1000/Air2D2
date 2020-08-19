@@ -10,7 +10,7 @@
 <br>
 <% @droids.each do |droid| %>
   <% if droid.photo.attached? %>
-  <%= cl_image_tag droid.photo.key, height: 300, width: 400, crop: :fill %>
+  <%= cl_image_tag droid.photo.key %>
   <% end %>
  <p> <%= droid.name %> </p>
  <p> <%=droid.category %> </p>
