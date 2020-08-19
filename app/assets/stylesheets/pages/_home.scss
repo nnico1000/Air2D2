@@ -4,10 +4,15 @@ nav {
 }
 
 .home {
-  margin-top: 200px;
+  height: 100vh;
+}
+
+.home, .home-content {
+  // margin-top: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .home h5 {
