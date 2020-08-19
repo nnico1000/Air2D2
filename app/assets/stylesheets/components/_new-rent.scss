@@ -1,0 +1,19 @@
+.container-new-rent {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $button;
+}
+
+.rent-form {
+  margin-bottom: 20px;
+}
+h1 {
+  margin-bottom: 30px;
+}
+
+.rent-display {
+  margin-bottom: 50px;
+}

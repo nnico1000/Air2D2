@@ -20,8 +20,9 @@ class ApplicationController < ActionController::Base
     # devise_parameter_sanitizer.permit(:sign_up, keys: [:photo])
 
     # For additional in app/views/devise/registrations/edit.html.erb
-    # devise_parameter_sanitizer.permit(:account_update, keys: [:photo])
-    #devise_parameter_sanitizer.permit(:sign_up, keys: :photo)
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :species, :planet, :radio_frequency, :photo])
+
+    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :species, :planet, :radio_frequency, :photo])
 
     # For additional in app/views/devise/registrations/edit.html.erb
     #devise_parameter_sanitizer.permit(:account_update, keys: :photo)
