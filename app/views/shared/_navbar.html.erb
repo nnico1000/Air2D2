@@ -9,6 +9,7 @@
 
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <%= link_to "Ajouter un droid", new_droid_path, class: "btn btn-primary" %>
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
