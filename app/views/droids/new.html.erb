@@ -4,11 +4,11 @@
 <div id="new-form">
   <%= simple_form_for (@droid) do |f| %>
   <%= f.input :name %>
-  <%= f.input :category %> <!--collection: Droid::CATEGORY-->
-  <%= f.input :builder %>
+  <%= f.input :category, collection: Droid::CATEGORY %>
+  <%= f.input :builder, collection: Droid::BUILDER  %>
   <%= f.input :age %>
   <%= f.input :description %>
-  <%= f.input :era %> <!--collection: Droid::ERA-->
+  <%= f.input :era, collection: Droid::ERA %>
   <%= f.input :price_per_year  %>
   <%= f.input :photo, as: :file %>
   <%= f.submit "Ajouter le droid", class: 'btn'%>
