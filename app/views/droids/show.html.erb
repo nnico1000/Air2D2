@@ -1,6 +1,6 @@
 <h1><%= @droid.name %></h1>
   <% if @droid.photo.attached? %>
-    <%= cl_image_tag @droid.photo.key, height: 300, width: 400, crop: :fill %>
+    <%= cl_image_tag @droid.photo.key %>
   <% end %>
   <p><%= @droid.category %></p>
   <p><%= @droid.builder %></p>
