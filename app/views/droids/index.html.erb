@@ -1,22 +1,38 @@
-<h1>All droids</h1>
-
-<%= link_to "sign out", destroy_user_session_path, method: :delete %>
-
-<% if policy(Droid).create? %>
-  <%= link_to "Create a new robot", new_droid_path %>
-<% end %>
-
-<br>
-<br>
-<% @droids.each do |droid| %>
-  <% if droid.photo.attached? %>
-  <%= cl_image_tag droid.photo.key, height: 300, width: 400, crop: :fill %>
+<div class="under-body">
+  <%= simple_form_for :search, url: droids_path, method: "GET" do |f| %>
+    <div class="search-bar d-flex flex-direction-row justify-content-between align-items-center">
+      <div class="row w-100 content-box bg-white p-2">
+        <div class="search-box px-2">
+          <%= f.input :era, prompt: "ERA", label: false, collection: Droid::ERA %>
+        </div>
+        <div class="search-box px-2">
+          <%= f.input :category, prompt: "CATEGORY", label: false, collection: Droid::CATEGORY %>
+        </div>
+        <div class="search-box px-2">
+          <%= f.input :builder, prompt: "BUILDER", label: false, collection: Droid::BUILDER %>
+        </div>
+        <div class="search-box px-2">
+          <%= f.button :submit, 'Search 🔍' %>
+        </div>
+      </div>
+    </div>
   <% end %>
- <p> <%= droid.name %> </p>
- <p> <%=droid.category %> </p>
- <%= link_to "See details", droid_path(droid) %>
- <br>
- <br>
-<% end %>
-<br>
-<br>
+  <div class="all-cards">
+    <% @droids.each do |droid| %>
+      <div class="card mt-3" style="width: 18rem;">
+        <% if droid.photo.attached? %>
+          <%= cl_image_tag droid.photo.key, height: 300, width: 400, crop: :fill, class:"card-img-top" %>
+        <% else %>
+          <img class="card-img-top" src="https://images.pexels.com/photos/2085831/pexels-photo-2085831.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Card image cap">
+        <% end %>
+        <div class="card-body">
+          <h5 class="card-title"><%= droid.name %></h5>
+          <p class="card-text">Era: <%= droid.era %></p>
+          <p class="card-text">Category: <%= droid.category %></p>
+          <p class="card-text">Builder: <%= droid.builder %></p>
+          <%= link_to "See more", droid_path(droid) %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

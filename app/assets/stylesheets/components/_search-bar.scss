@@ -1,0 +1,42 @@
+.under-body {
+  margin: 10% 10%;
+}
+
+.form-group {
+  margin-bottom: 0px;
+}
+
+.search-box, .add-box {
+  width: 25%;
+}
+
+.content-box {
+  margin: 0px;
+  display: flex;
+  justify-content: space-around;
+  border-radius: 4px;
+}
+
+// .add-box {
+//   margin-left: 10px;
+//   color: black;
+//   text-decoration: none;
+//   background-color: #FBE123;
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-around;
+// }
+
+.search-box input {
+  width: 100%;
+  height: 100%;
+  background-color: #FBE123;
+  border-radius: 2px;
+  border: 0px;
+  padding: 7.4px;
+
+  &:hover {
+    background-color: black;
+    color: #FBE123;
+  }
+}
