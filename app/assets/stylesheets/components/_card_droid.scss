@@ -1,0 +1,74 @@
+.card-droid {
+  overflow: hidden;
+  height: 520px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 80px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.card-droid img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card-droid h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-droid p {
+  font-size: 18px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-droid .card-droid-infos {
+  padding: 16px;
+}
+.img-card {
+  width: 30%;
+  height: 100%;
+}
+
+.card-droid-infos {
+  width: 64%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.droid-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 10px;
+}
+
+.chose-date {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+}
+
+.owner img {
+  width: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.owner {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
