@@ -1,7 +1,9 @@
 <div class="card-droid">
   <div class="img-card">
     <% if @droid.photo.attached? %>
-    <%= cl_image_tag @droid.photo.key %>
+      <%= cl_image_tag @droid.photo.key %>
+    <% else %>
+      <img class="card-img-top" src="https://images.pexels.com/photos/2085831/pexels-photo-2085831.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Card image cap">
     <% end %>
   </div>
 
