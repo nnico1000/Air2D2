@@ -1,6 +1,8 @@
 <div class="card-droid">
   <div class="img-card">
+    <% if @droid.photo.attached? %>
     <%= cl_image_tag @droid.photo.key %>
+    <% end %>
   </div>
 
   <div class="card-droid-infos">
