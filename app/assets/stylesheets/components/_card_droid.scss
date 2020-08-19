@@ -8,7 +8,14 @@
   align-items: center;
   margin: 80px;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 5px;
+}
+
+.all-description {
+  display: flex;
+  flex-direction: column;
+  width: 66%;
+  height: 85%;
 }
 
 .card-droid img {
@@ -71,6 +78,16 @@
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
+}
+
+<<<<<<< HEAD
+.lien i {
+  color: rgba(0,0,0,0.5);
+}
+
+.lien ul {
+  list-style-type: none;
+  padding: 0px;
 }
 
 .card-text {
