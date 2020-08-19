@@ -1,5 +1,19 @@
-<%= simple_form_for([@user, @droid, @rent]) do |f| %>
-  <%= f.input :start_year %>
-  <%= f.input :end_year %>
-  <%= f.submit "Ask for rent", class: "btn btn-primary" %>
-<% end %>
+
+<div class="container-new-rent">
+  <h3>These are the rents:</h3>
+  <div class="rent-display">
+    <% @droid.rents.each_with_index do |rent, index| %>
+      <p><%= index + 1 %> ) <%= rent.start_year %> to <%= rent.end_year %></p>
+    <% end %>
+  </div>
+  <h1>Rent</h1>
+  <%= simple_form_for([@droid, @rent]) do |f| %>
+    <div class="rent-form text-center">
+      <%= f.input :start_year %>
+      <%= f.input :end_year %>
+    </div>
+    <div class="text-center">
+      <%= f.submit "Ask for rent", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
