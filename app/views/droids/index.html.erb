@@ -32,6 +32,7 @@
           <p class="card-text">Era: <%= droid.era %></p>
           <p class="card-text">Category: <%= droid.category %></p>
           <p class="card-text">Builder: <%= droid.builder %></p>
+          <div class="price"><i class="fas fa-coins"></i><%= droid.price_per_year %></div>
           <hr>
           <div class="card-button">
             <%= link_to "See more", droid_path(droid), class:"btn-see-more" %>
