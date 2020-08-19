@@ -6,3 +6,29 @@
   // grid-auto-rows: 350px;
   grid-gap: 15px;
 }
+
+.card {
+  border: none;
+  box-shadow: 5px 5px 5px 5px black;
+}
+
+.card-title, .card-text, .card-button {
+  border-radius: 3px;
+  text-align: center;
+  padding: 5px 3px;
+}
+
+.card-title {
+  background-color: #FBE123;
+}
+
+.card-button {
+  background-color: black;
+}
+
+.btn-see-more {
+  text-decoration: none;
+  border-radius: 3px;
+  text-align: center;
+  padding: 5px 3px;
+}
