@@ -10,18 +10,22 @@ Rent.destroy_all
 Droid.destroy_all
 User.destroy_all
 
-hans = User.create!(name: "Hans", email: "hans@gmail.com", password: "123456")
-hans_2 = User.create!(name: "Hans2", email: "hans2@gmail.com", password: "123456")
+# hans = User.create!(name: "Hans", email: "hans@gmail.com", password: "123456")
+# hans_2 = User.create!(name: "Hans2", email: "hans2@gmail.com", password: "123456")
 
-p 'users created'
+# p 'users created'
 
-droid = Droid.create!(name: "droid", category: "combat", description: "great fighter", user: hans)
-droid2 = Droid.create!(name: "droid2", category: "médical", description: "great doctor", user: hans)
-droid3 = Droid.create!(name: "droid3", category: "combat", description: "great fighter", user: hans)
-droid4 = Droid.create!(name: "droid4", category: "médical", description: "great doctor", user: hans)
+# droid = Droid.create!(name: "droid", category: "combat", description: "great fighter", user: hans)
+# droid2 = Droid.create!(name: "droid2", category: "médical", description: "great doctor", user: hans)
+# droid3 = Droid.create!(name: "droid3", category: "combat", description: "great fighter", user: hans)
+# droid4 = Droid.create!(name: "droid4", category: "médical", description: "great doctor", user: hans)
 
-p 'droid created'
+# p 'droid created'
 
-rent = Rent.create!(user: hans_2, droid: droid2)
+# rent = Rent.create!(user: hans_2, droid: droid2)
 
-p 'rent created'
+# p 'rent created'
+
+50.times do
+  droid = Droid.new(name: )
+end
