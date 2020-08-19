@@ -15,7 +15,7 @@
           <%= link_to "Home", "#", class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
-          <%= image_tag "https://pbs.twimg.com/profile_images/665517942713532416/Vydw9Md1_400x400.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "se déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
