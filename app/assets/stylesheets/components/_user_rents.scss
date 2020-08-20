@@ -1,0 +1,50 @@
+.card-rent-droid {
+  width: 88%;
+  height: 177px;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  margin: 30px;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  &:hover{
+    transform: scale(1.1);
+    opacity: 1;
+    transition: all 0.3s ease;
+  }
+}
+
+.container-rents {
+  overflow: scroll;
+  max-width: 80%;
+  max-height: 400px;
+  margin-bottom: 60px;
+  margin-left: 80px;
+}
+
+.card-rent-droid-infos {
+  flex-direction: column;
+  min-width: 300px;
+  min-height: 177px;
+}
+
+.user-btn-see-more {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 3px;
+  text-align: center;
+  padding: 5px 3px;
+  color: #fee134;
+  text-decoration: none;
+}
+
+.img-rent-droid img {
+  width: 257px;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fuckthistitle {
+  color: $button;
+}
