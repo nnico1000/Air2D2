@@ -4,9 +4,15 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: $button;
 }
 
+h2 {
+  text-align: center;
+}
+
+.select {
+  color: grey;
+}
 
 .btn-ask-for-rent {
   margin-top: 20px;
