@@ -3,7 +3,7 @@ class DroidsController < ApplicationController
   before_action :set_droid, only: [:show, :edit, :update, :destroy]
 
   def index
-    # if params["search"]
+    # if params[:search]
     #   @era = params["search"]["era"]
     #   @category = params["search"]["category"]
     #   @builder = params["search"]["builder"]
@@ -11,8 +11,13 @@ class DroidsController < ApplicationController
     #     if droid.ear ==
     #   end
     # end
-    @droids = policy_scope(Droid)
-    authorize @droids
+    @droids = Droid.all
+    if params[:search].present?
+      @droids = @droids.where(era: params[:search][:era]) if params[:search][:era].present?
+      @droids = @droids.where(category: params[:search][:category]) if params[:search][:category].present?
+      @droids = @droids.where(builder: params[:search][:builder]) if params[:search][:builder].present?
+    end
+    @droids = policy_scope(@droids)
   end
 
   def show
