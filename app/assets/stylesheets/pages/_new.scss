@@ -1,3 +1,18 @@
+.new-droid-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#new-form {
+  max-width: 60vh;
+}
+
+#new-form .btn {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 
 h1 {
   color: #FBE122;
