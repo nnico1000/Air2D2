@@ -23,8 +23,8 @@ const jauge = () => {
 
   }
     slider.on('slide',function(sliderValue) {
+        calcul();
 
-      calcul();
       // document.getElementById("ex6SliderVal").textContent = sliderValue;
       });
   }
