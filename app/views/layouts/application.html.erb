@@ -21,9 +21,9 @@
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-
-    <%= yield %>
-
+    <div class="body_wrapper">
+      <%= yield %>
+    </div>
     <% unless params[:action] == "home" %>
       <%= render "shared/footer" %>
     <% end %>

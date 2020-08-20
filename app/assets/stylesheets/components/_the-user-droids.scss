@@ -1,0 +1,74 @@
+.user-header {
+  display: flex;
+  justify-content: center;
+}
+
+.user-header i {
+  &:hover {
+    color: white;
+  }
+}
+
+.user-droid-rent-image {
+  max-width: 50px;
+  max-height: 50px;
+  background-size: cover;
+  background-position: center;
+}
+
+.user-droids-recap {
+  margin: 30px 30px;
+}
+
+.user-droids-content {
+  min-height: 350px;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+}
+
+.user-droids-content a {
+  text-decoration: none;
+}
+
+.petite-bulle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.user-droid-card {
+  position: relative;
+  margin: 0px 100px ;
+  min-width: 300px;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+
+  &:hover {
+    opacity: 1;
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+  }
+}
+
+h3 {
+  margin-left: 100px;
+  color: $button;
+}
