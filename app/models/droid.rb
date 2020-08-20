@@ -7,4 +7,7 @@ class Droid < ApplicationRecord
   ERA = ['Old Republic', 'New Republic', 'Empire Sith' ]
   CATEGORY = ['Astomecano', 'Combat', 'Medical', 'Technicien', 'Utilitaire' ]
   BUILDER = ['Les mines de Dorvalla', 'Maison organa', 'République galactique', 'Résistance']
+
+  include PgSearch::Model
+  multisearchable against: [:era, :category, :builder]
 end
