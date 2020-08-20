@@ -1,0 +1,29 @@
+<% if @user.rents.first.nil? %>
+  <h2>You have no reservation</h2>
+<% else %>
+  <h3 class="fuckthistitle">Your reservations</h3>
+  <div class="container-rents">
+    <% @user.rents.each do |rent| %>
+        <div class="card-rent-droid">
+          <div class="img-rent-droid">
+            <% if rent.droid.photo.attached? %>
+              <%= cl_image_tag rent.droid.photo.key, crop: :fill %>
+            <% else %>
+              <img class="card-img-top" src="https://images.pexels.com/photos/2085831/pexels-photo-2085831.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Card image cap">
+            <% end %>
+          </div>
+          <div class="card-rent-droid-infos">
+            <h5 class="card-title"><%= rent.droid.name %></h5>
+            <hr>
+            <p class="card-rent-droid-text"><i class="fas fa-history"></i> <%= rent.droid.era %></p>
+            <p class="card-rent-droid-text"><i class="fas fa-user-astronaut"></i> <%= rent.droid.category %></p>
+            <p class="card-rent-droid-text"><i class="fas fa-tools"></i> <%= rent.droid.builder %></p>
+          </div>
+          <div class="card-rent-droid-button">
+            <p class="price"><i class="fas fa-coins"></i> <%= rent.droid.price_per_year %></p>
+            <%= link_to "See more", droid_path(rent.droid), class:"user-btn-see-more" %>
+          </div>
+        </div>
+    <% end %>
+  </div>
+<% end %>

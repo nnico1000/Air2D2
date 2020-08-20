@@ -1,6 +1,6 @@
 class RentsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_droid, only: [:new, :create]
+  before_action :set_droid, only: [:new, :create, :overlaps]
 
   def show
     @rent = Rent.find(params[:id])
@@ -17,8 +17,16 @@ class RentsController < ApplicationController
     authorize @rent
     @rent.droid = @droid
     @rent.user = current_user
-    @rent.save
-    redirect_to droid_path(@droid)
+    if @droid.booked?(@rent.start_year, @rent.end_year) && @rent.save
+      # cas ou la date d'arrivée est après la date de départ + il n'est pas booké pour ces dates + on a réussi à sauvegarder le rent - il a passé ses validations
+      redirect_to droid_path(@droid)
+    elsif !@droid.booked?(@rent.start_year, @rent.end_year)
+      flash[:alert] = "Droid already booked at these dates"
+      render :new
+    else
+      flash[:alert] = @rent.errors.full_messages.join(", ")
+      render :new
+    end
   end
 
   def destroy
