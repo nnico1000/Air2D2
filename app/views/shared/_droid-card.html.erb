@@ -26,28 +26,33 @@
 
 <% else %>
 
-  <div class="all-cards">
-    <% @user.droids.each do |droid| %>
-      <div class="card mt-3 bg-light" style="width: 18rem;">
+   <div class="user-droids-recap">
+    <h3>Your droids (<%= @user.droids.count %>)</h3>
+    <div class="user-droids-content">
+      <% @user.droids.each do |droid| %>
+       <%= link_to droid_path(droid) do %>
         <% if droid.photo.attached? %>
-          <%= cl_image_tag droid.photo.key, height: 192, width: 288, crop: :fill, class:"card-img-top" %>
+          <div class="user-droid-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path droid.photo.key %>'); background-size: cover; background-position: center;">
         <% else %>
-          <img class="card-img-top" src="https://images.pexels.com/photos/2085831/pexels-photo-2085831.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Card image cap">
+          <div class="user-droid-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.pexels.com/photos/2085831/pexels-photo-2085831.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'); background-size: cover; background-position: center;">
         <% end %>
-        <div class="card-body">
-          <h5 class="card-title"><%= droid.name %></h5>
-          <hr>
-          <p class="card-text">Era: <%= droid.era %></p>
-          <p class="card-text">Category: <%= droid.category %></p>
-          <p class="card-text">Builder: <%= droid.builder %></p>
-          <div class="price"><i class="fas fa-coins"></i><%= droid.price_per_year %></div>
-          <hr>
-          <div class="card-button">
-            <%= link_to "See more", droid_path(droid), class:"btn-see-more" %>
+            <div class="petite-bulle">
+            <% if !droid.rents.first.nil? %>
+              <%= link_to root_path do %>
+                <img src="https://www.flaticon.com/premium-icon/icons/svg/580/580670.svg" class="user-droid-rent-image">
+              <% end %>
+            <% else %>
+              <%= link_to root_path do %>
+                <img src="https://cdn0.iconfinder.com/data/icons/hotel-vacation/33/for_rent-512.png" class="user-droid-rent-image">
+              <% end %>
+            </div>
+            <% end %>
+            <div class="user-droid-rented"></div>
+            <div class="user-droid-name"><p><%= droid.name %></p></div>
           </div>
-        </div>
-      </div>
-    <% end %>
+       <% end %>
+      <% end %>
+    </div>
   </div>
 
 <% end %>
