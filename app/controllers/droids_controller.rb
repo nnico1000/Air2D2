@@ -47,12 +47,13 @@ class DroidsController < ApplicationController
     @user = current_user
 
     @droid.user = @user
+    authorize @droid
 
     if @droid.save
       redirect_to droids_path
+    else
+      render :new
     end
-
-    authorize @droid
   end
 
   def destroy
