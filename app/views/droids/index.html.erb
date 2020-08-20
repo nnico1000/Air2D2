@@ -18,27 +18,5 @@
     </div>
   <% end %>
 
-  <div class="all-cards">
-    <% @droids.each do |droid| %>
-      <div class="card mt-3 bg-light" style="width: 18rem;">
-        <% if droid.photo.attached? %>
-          <%= cl_image_tag droid.photo.key, height: 192, width: 288, crop: :fill, class:"card-img-top" %>
-        <% else %>
-          <img class="card-img-top" src="https://images.pexels.com/photos/2085831/pexels-photo-2085831.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Card image cap">
-        <% end %>
-        <div class="card-body">
-          <h5 class="card-title"><%= droid.name %></h5>
-          <hr>
-          <p class="card-text">Era: <%= droid.era %></p>
-          <p class="card-text">Category: <%= droid.category %></p>
-          <p class="card-text">Builder: <%= droid.builder %></p>
-          <div class="price"><i class="fas fa-coins"></i><%= droid.price_per_year %></div>
-          <hr>
-          <div class="card-button">
-            <%= link_to "See more", droid_path(droid), class:"btn-see-more" %>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  </div>
+  <%= render "shared/droid-card" %>
 </div>

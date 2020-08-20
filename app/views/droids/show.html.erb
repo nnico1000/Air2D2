@@ -1,3 +1,6 @@
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/css/bootstrap-slider.min.css">
+
+
 <div class="card-droid">
   <div class="img-card">
     <% if @droid.photo.attached? %>
@@ -31,25 +34,25 @@
         </div>
         <div class="joge">
           <div class="chose-date">
-            <div class="js">
-              <form>
-                <div class="form-group-jauge">
-                  <label for="formControlRange">Nombre d'années de locations</label>
-                  <input type="range" class="form-control-range" id="formControlRange">
-                </div>
-              </form>
+            <div id="jauge">
+             <p>Your price</p>
+             <hr>
+              <input id="ex1" data-price="<%= @droid.price_per_year %>" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="500" data-slider-step="1" data-slider-value="14"/>
+              <div id="year-div"><p id="years"><p><p>: years</p></div>
             </div>
             <div class="price">
-              <i class="fas fa-coins"></i> <%= @droid.price_per_year %>
+              <p><i class="fas fa-coins"></i></p><p id="calculprice"></p>
             </div>
-            <div class="rent-btn"><%= link_to "Rent this droid", new_droid_rent_path(@droid) %></div>
+            <div class="rent-btn"><%= link_to "Rent this droid", new_droid_rent_path(@droid), class: 'btn' %></div>
         </div>
       </div>
     </div>
     <div class="footer-card">
       <div class="owner">
-        <img src="https://starwarsblog.starwars.com/wp-content/uploads/2013/08/Onaconda_Farr-1088x816-420160302007.jpg" alt="" >
-        <h2>Location à <%= @droid.user.name %></h2>
+        <% if @droid.user.photo.attached? %>
+        <%= cl_image_tag @droid.user.photo.key, height: 40, width: 40, crop: :fill %>
+        <% end %>
+        <p>Location à <%= @droid.user.name %></p>
       </div>
 
         <div class="btn-book-date">
@@ -60,11 +63,12 @@
                         method: :delete,
                         data: { confirm: "Are you sure?" } %>
           <% end %>
-          <%= link_to 'Back', droids_path %>
+          <%= link_to 'Back', droids_path, class: 'btn-secondary' %>
         </div>
       </div>
     </div>
   </div>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/bootstrap-slider.min.js"></script>
 
