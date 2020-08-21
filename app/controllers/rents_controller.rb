@@ -17,10 +17,10 @@ class RentsController < ApplicationController
     authorize @rent
     @rent.droid = @droid
     @rent.user = current_user
-    if @droid.booked?(@rent.start_year, @rent.end_year) && @rent.save
+    if @droid.booked?(@rent.start_year, @rent.end_year, @droid) && @rent.save
       # cas ou la date d'arrivée est après la date de départ + il n'est pas booké pour ces dates + on a réussi à sauvegarder le rent - il a passé ses validations
       redirect_to droid_path(@droid)
-    elsif !@droid.booked?(@rent.start_year, @rent.end_year)
+    elsif !@droid.booked?(@rent.start_year, @rent.end_year, @droid)
       flash[:alert] = "Droid already booked at these dates"
       render 'droids/show'
     else
