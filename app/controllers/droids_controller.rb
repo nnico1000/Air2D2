@@ -20,10 +20,15 @@ class DroidsController < ApplicationController
     @droids = policy_scope(@droids)
   end
 
+  def rented?
+    true if !@droid.rents.first.nil?
+  end
+
   def show
     # @droid = Droid.find(params[:id])
     authorize @droid
     @rent = Rent.new
+    @rented = rented?
   end
 
   def edit

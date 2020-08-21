@@ -29,29 +29,45 @@
                 <li><i class="fas fa-history"></i>  <%= @droid.era %></li>
               </ul>
 
+              <% if @rented %>
+                <div class="success">
+                  <p><b>Last reservation</b></p>
+                  <div id="des-name">
+                  <p>Droid rented by <b> <%= @current_user.name %></b> : </p>
+                    <% if @current_user.photo.attached? %>
+                      <p><%= cl_image_tag current_user.photo.key, height: 40, width: 40, crop: :fill %></p>
+                    <% else %>
+                    <% end %>
+                    </div>
+                  <p>From <b> <%= @droid.rents.last.start_year %></b> to <b><%= @droid.rents.last.end_year %></b></p>
+                </div>
+              <% else %>
+              <% end  %>
             </div>
           </div>
         </div>
-        <div class="joge">
-          <div class="chose-date">
-            <div id="jauge">
-             <p>Your price</p>
-             <hr>
-              <input id="ex1" data-price="<%= @droid.price_per_year %>" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="500" data-slider-step="1" data-slider-value="14"/>
-              <div id="year-div"><p id="years"><p><p>: years</p></div>
-            </div>
-            <div class="price">
-              <p><i class="fas fa-coins"></i></p><p id="calculprice"></p>
-            </div>
 
-            <div class="rent-btn">
-              <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal">
-                Rent this droid
-              </button>
+            <div class="joge">
+              <div class="chose-date">
+                <div id="jauge">
+                 <p>Your price</p>
+                 <hr>
+                  <input id="ex1" data-price="<%= @droid.price_per_year %>" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="500" data-slider-step="1" data-slider-value="14"/>
+                  <div id="year-div"><p id="years"><p><p>: years</p></div>
+                </div>
+                <div class="price">
+                  <p><i class="fas fa-coins"></i></p><p id="calculprice"></p>
+                </div>
+
+                <div class="rent-btn">
+                  <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal">
+                    Rent this droid
+                  </button>
+                </div>
+              </div>
             </div>
-          </div>
-    </div>
-    </div>
+        </div>
+
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
@@ -94,7 +110,4 @@
       </div>
     </div>
   </div>
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/bootstrap-slider.min.js"></script>
 
