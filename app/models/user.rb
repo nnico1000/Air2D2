@@ -4,7 +4,7 @@ class User < ApplicationRecord
   SPECIES = ['Yuzzum', 'Utapaun', 'Chagrian', 'Gand', 'Talz', 'Clawdites', 'Human', 'Kitonak']
   PLANET = ['Aargonar', 'Byss', 'Jabiim', 'Killun', 'Sebaddon', 'Stewjon', 'Wynkahthu', 'Zeffo']
   has_many :droids, dependent: :destroy
-  has_many :rents
+  has_many :rents, dependent: :destroy
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_one_attached :photo

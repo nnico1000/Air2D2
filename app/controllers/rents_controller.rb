@@ -22,10 +22,10 @@ class RentsController < ApplicationController
       redirect_to droid_path(@droid)
     elsif !@droid.booked?(@rent.start_year, @rent.end_year)
       flash[:alert] = "Droid already booked at these dates"
-      render :new
+      render 'droids/show'
     else
       flash[:alert] = @rent.errors.full_messages.join(", ")
-      render :new
+      render 'droids/show'
     end
   end
 

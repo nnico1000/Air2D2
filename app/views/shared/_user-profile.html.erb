@@ -1,0 +1,19 @@
+
+<div class="container-profile-text">
+  <div class="profile-text">
+    <div class="text-user-profile">
+      <h1><%= @user.name %></h1>
+      <p><i class="fas fa-transgender-alt"></i> <%= @user.species %></p>
+      <p><i class="fas fa-globe"></i> <%= @user.planet %></p>
+      <p><i class="fas fa-broadcast-tower"></i> <%= @user.radio_frequency %></p>
+      <p><i class="fas fa-envelope-square"></i> <%= @user.email %></p>
+    </div>
+  </div>
+  <div class="photo-user-profile">
+    <% if @user.photo.attached? %>
+      <%= cl_image_tag @user.photo.key %>
+    <% else %>
+      <img src="https://fr.web.img6.acsta.net/r_1280_720/newsv7/16/07/01/15/36/0448690.jpg" alt="Missa">
+    <% end %>
+  </div>
+</div>
