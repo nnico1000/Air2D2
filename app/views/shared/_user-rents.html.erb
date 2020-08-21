@@ -1,7 +1,6 @@
 <% if @user.rents.first.nil? %>
-  <h2>You have no reservation</h2>
 <% else %>
-  <h3 class="fuckthistitle">Your reservations</h3>
+  <h3 class="fuckthistitle"><%= @user.name%>'s reservations</h3>
   <div class="container-rents">
     <% @user.rents.each do |rent| %>
         <div class="card-rent-droid">

@@ -24,13 +24,15 @@ require("channels")
 
 // External imports
 import "bootstrap";
-import "../plugins/flatpickr";
+// import "../plugins/flatpickr";
 
 
 // Internal imports, e.g:
 import { jauge } from '../components/jauge';
+import { calculYear } from '../components/rent-years';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   jauge();
+  calculYear();
 });

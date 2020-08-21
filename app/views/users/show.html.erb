@@ -1,7 +1,10 @@
 <div class="user-header">
-  <h1 class="mr-3">Your profile</h1>
+  <h1 class="mr-3"> <%= @user.name %>'s profile</h1>
 </div>
 
 <%= render "shared/user-profile" %>
-<%= render "shared/droid-card" %>
-<%= render "shared/user-rents" %>
+
+<div class="user-list-all-droids" style="display: flex; flex-direction: column;">
+  <%= render "shared/droid-card" %>
+  <%= render "shared/user-rents" %>
+</div>

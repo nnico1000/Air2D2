@@ -4,7 +4,7 @@
 <div class="card-droid">
   <div class="img-card">
     <% if @droid.photo.attached? %>
-      <%= cl_image_tag @droid.photo.key %>
+        <%= cl_image_tag @droid.photo.key %>
     <% else %>
       <img class="card-img-top" src="https://images.pexels.com/photos/2085831/pexels-photo-2085831.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Card image cap">
     <% end %>
@@ -87,9 +87,14 @@
     <div class="footer-card">
       <div class="owner">
         <% if @droid.user.photo.attached? %>
-        <%= cl_image_tag @droid.user.photo.key, height: 40, width: 40, crop: :fill %>
+          <%= link_to user_path(@droid.user) do %>
+            <%= cl_image_tag @droid.user.photo.key, height: 40, width: 40, crop: :fill %>
+          <% end %>
         <% end %>
-        <p>Location à <%= @droid.user.name %></p>
+
+        <%= link_to user_path(@droid.user) do %>
+          <p>Louer le droid de <strong style="color: black"><%= @droid.user.name %></strong></p>
+        <% end %>
       </div>
 
         <div class="btn-book-date">
