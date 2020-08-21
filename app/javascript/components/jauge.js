@@ -30,6 +30,14 @@ const jauge = () => {
         });
     }
 
+
+  }
+    slider.on('slide',function(sliderValue) {
+        calcul();
+
+      // document.getElementById("ex6SliderVal").textContent = sliderValue;
+      });
+
   }
 }
 
