@@ -31,7 +31,7 @@
 <% else %>
 
    <div class="user-droids-recap">
-    <h3>Your droids (<%= @user.droids.count %>)</h3>
+    <h3><%= @user.name %>'s droids (<%= @user.droids.count %>)</h3>
     <div class="user-droids-content">
       <% @user.droids.each do |droid| %>
        <%= link_to droid_path(droid) do %>
