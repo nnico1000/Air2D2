@@ -1,28 +1,32 @@
-.profile-text {
-  background-color: white;
-  margin: 30px;
-  border-radius: 10px;
-  padding: 10px;
-  flex-direction: column;
-  width: 400px;
-  margin-left: 100px;
-}
-
 .photo-user-profile img {
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   justify-content: center;
   padding: 10px;
   margin: 30px;
-  margin-right: 100px;
+  margin-right: 50px;
 }
 
 .container-profile-text {
   display: flex;
   justify-content: space-between;
+  background-color: rgba(255,255,255,0.9);
+  margin: 30px;
+  border-radius: 10px;
+  padding: 10px;
+  width: 600px;
 }
 
 .text-user-profile p {
   padding: 10px;
+}
+
+.text-user-profile h1 {
+    color: black ;
+  }
+
+.container-profile {
+  display: flex;
+  justify-content: center;
 }
