@@ -25,11 +25,18 @@ const jauge = () => {
     }
       slider.on('slide',function(sliderValue) {
 
+    let totalPrice = sliderValue * price
+    // console.log('slideer value');
+    // console.log(sliderValue);
+    // console.log('price_per_year value');
+
+    // console.log(totalPrice);
+    document.getElementById("calculprice").textContent = totalPrice;
+    document.getElementById("years").textContent = sliderValue;
         calcul();
         // document.getElementById("ex6SliderVal").textContent = sliderValue;
         });
     }
-
 
   }
     slider.on('slide',function(sliderValue) {
@@ -39,7 +46,6 @@ const jauge = () => {
       });
 
   }
-}
 
 export {jauge}
 
