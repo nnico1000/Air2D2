@@ -183,5 +183,21 @@
   text-decoration: none;
 }
 
+.success {
+font-family: Work Sans;
+border-style: solid;
+border-width: 1px;
+border-color: grey;
+border-radius: 5px;
+box-shadow: 4px 2px 5px 0px rgba(148,148,148,1);
+padding: 10px;
+}
 
+.success img {
+  width: 40px;
+}
 
+#des-name {
+  display: flex;
+  justify-content: flex-start;
+}
