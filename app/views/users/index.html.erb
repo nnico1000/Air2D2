@@ -1,0 +1,15 @@
+ <div class="under-body">
+  <div class="user-header">
+    <h1 class="mr-3"> See profils </h1>
+  </div>
+
+  <div class="all-cards-users">
+    <% @users.each do |user| %>
+     <%= link_to user_path(user) do %>
+        <div class="user-droid-card mt-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path user.photo.key %>'); background-size: cover; background-position: center;">
+          <div class="user-droid-name"><p><%= user.name %></p></div>
+        </div>
+     <% end %>
+    <% end %>
+  </div>
+</div>
