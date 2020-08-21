@@ -42,11 +42,11 @@
         <% end %>
             <div class="petite-bulle">
             <% if !droid.rents.first.nil? %>
-              <%= link_to root_path do %>
+              <%= link_to droid_path(droid) do %>
                 <img src="https://www.flaticon.com/premium-icon/icons/svg/580/580670.svg" class="user-droid-rent-image">
               <% end %>
             <% else %>
-              <%= link_to root_path do %>
+              <%= link_to droid_path(droid) do %>
                 <img src="https://cdn0.iconfinder.com/data/icons/hotel-vacation/33/for_rent-512.png" class="user-droid-rent-image">
               <% end %>
             </div>
