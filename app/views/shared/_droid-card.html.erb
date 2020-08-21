@@ -32,29 +32,31 @@
 
    <div class="user-droids-recap">
     <h3><%= @user.name %>'s droids (<%= @user.droids.count %>)</h3>
-    <div class="user-droids-content">
-      <% @user.droids.each do |droid| %>
-       <%= link_to droid_path(droid) do %>
-        <% if droid.photo.attached? %>
-          <div class="user-droid-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path droid.photo.key %>'); background-size: cover; background-position: center;">
-        <% else %>
-          <div class="user-droid-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.pexels.com/photos/2085831/pexels-photo-2085831.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'); background-size: cover; background-position: center;">
-        <% end %>
-            <div class="petite-bulle">
-            <% if !droid.rents.first.nil? %>
-              <%= link_to droid_path(droid) do %>
-                <img src="https://www.flaticon.com/premium-icon/icons/svg/580/580670.svg" class="user-droid-rent-image">
-              <% end %>
-            <% else %>
-              <%= link_to droid_path(droid) do %>
-                <img src="https://cdn0.iconfinder.com/data/icons/hotel-vacation/33/for_rent-512.png" class="user-droid-rent-image">
-              <% end %>
+    <div class="user-droids-content w-100">
+      <div class="user-droids-wrap d-flex">
+        <% @user.droids.each do |droid| %>
+         <%= link_to droid_path(droid) do %>
+          <% if droid.photo.attached? %>
+            <div class="user-droid-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path droid.photo.key %>'); background-size: cover; background-position: center;">
+          <% else %>
+            <div class="user-droid-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.pexels.com/photos/2085831/pexels-photo-2085831.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'); background-size: cover; background-position: center;">
+          <% end %>
+              <div class="petite-bulle">
+                <% if !droid.rents.first.nil? %>
+                  <%= link_to droid_path(droid) do %>
+                    <img src="https://www.flaticon.com/premium-icon/icons/svg/580/580670.svg" class="user-droid-rent-image">
+                  <% end %>
+                <% else %>
+                  <%= link_to droid_path(droid) do %>
+                    <img src="https://cdn0.iconfinder.com/data/icons/hotel-vacation/33/for_rent-512.png" class="user-droid-rent-image">
+                  <% end %>
+                <% end %>
+              </div>
+              <div class="user-droid-name"><p><%= droid.name %></p></div>
             </div>
-            <% end %>
-            <div class="user-droid-name"><p><%= droid.name %></p></div>
-          </div>
-       <% end %>
-      <% end %>
+         <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 

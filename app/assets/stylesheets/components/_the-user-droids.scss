@@ -18,6 +18,9 @@
 
 .user-droids-recap {
   margin: 30px 30px;
+  h3 {
+    margin-left: 40px;
+  }
 }
 
 .user-droids-content {
@@ -45,7 +48,7 @@
 
 .user-droid-card {
   position: relative;
-  margin: 0px 100px ;
+  margin: 0px 40px ;
   min-width: 300px;
   width: 300px;
   height: 300px;

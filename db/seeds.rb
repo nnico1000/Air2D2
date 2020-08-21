@@ -85,7 +85,9 @@ puts "Creating 50 users, droids and rents"
     droid_two.photo.attach(io: file_droid_two, filename: 'photo_droid_two.png')
     droid_two.save
 
-    rent = Rent.new(start_year: rand(2000..2500), end_year: rand(2501..3000))
+    start_year = rand(2000..2249)
+    end_year = rand(2250..2490)
+    rent = Rent.new(start_year: start_year, end_year: end_year)
     rent.user = user
     rent.droid = droid_two
     rent.save
