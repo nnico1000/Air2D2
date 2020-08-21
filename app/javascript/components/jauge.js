@@ -13,11 +13,11 @@ const jauge = () => {
     let price = document.getElementById('ex1').dataset.price
 
     let totalPrice = sliderValue * price
-    console.log('slideer value');
-    console.log(sliderValue);
-    console.log('price_per_year value');
+    // console.log('slideer value');
+    // console.log(sliderValue);
+    // console.log('price_per_year value');
 
-    console.log(totalPrice);
+    // console.log(totalPrice);
     document.getElementById("calculprice").textContent = totalPrice;
     document.getElementById("years").textContent = sliderValue;
 
