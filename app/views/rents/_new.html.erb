@@ -1,14 +1,14 @@
-<div class="container-new-rent text-center">
+
+
   <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
     <h2>Rent</h2>
-    <%= simple_form_for [@droid, @rent] do |f| %>
+    <%= simple_form_for [ @droid, @rent ] do |f| %>
       <%= f.input :start_year, collection: (2020..3000), required: false, input_html: {id: "range_start"} %>
       <%= f.input :end_year, collection: (2020..3000), required: false, input_html: {id: "range_end"} %>
     <div class="btn-ask-for-rent text-center">
       <%= f.button :submit, "Ask for rent", class: "btn btn-primary" %>
     </div>
   <% end %>
-</div>
 </div>
 
 

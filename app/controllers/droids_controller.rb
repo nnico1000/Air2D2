@@ -23,6 +23,7 @@ class DroidsController < ApplicationController
   def show
     # @droid = Droid.find(params[:id])
     authorize @droid
+    @rent = Rent.new
   end
 
   def edit
