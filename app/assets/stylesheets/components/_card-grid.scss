@@ -17,9 +17,10 @@
   box-shadow: 5px 5px 5px 5px black;
 }
 
-.card-title, .card-text, .card-button {
+.card-title, .card-button {
   border-radius: 3px;
   padding: 5px 3px;
+  text-align: center;
 }
 
 .card-title {
@@ -35,4 +36,9 @@
   border-radius: 3px;
   text-align: center;
   padding: 5px 3px;
+}
+
+.card-text {
+  padding: 5px 3px;
+  border-radius: 3px;
 }
